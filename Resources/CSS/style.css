@@ -1,0 +1,368 @@
+/* Author: Tomi Puumalainen 23.03.2023 */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+* {
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    background: #1f2833;
+}
+
+/* Nav menu styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #191b24;
+    color: #66fcf1;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar p {
+    font-size: 20px;
+}
+
+.nav-links a {
+    color: #66fcf1;
+}
+
+.logo {
+    font-size: 32px;
+}
+
+.logo p {
+    font-size: 16px;
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+    margin-right: 200px;
+    list-style-type: none;
+}
+
+.menu li:hover {
+    background-color: #3e4f64;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 5px 14px;
+}
+
+.services {
+    position: relative;
+}
+
+.dropdown {
+    background-color: #293544;
+    position: absolute;
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+    list-style-type: none;
+}
+
+.dropdown li+li {
+    margin-top: 10px;
+}
+
+.dropdown li {
+    text-align: center;
+    margin-right: 35px;
+}
+
+.dropdown li:hover {
+    background-color: #3e4f64;
+}
+
+.services:hover .dropdown {
+    display: block;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+/* main */
+.content {
+	display: flex;
+	flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    width: 70%;
+}
+
+.welcome-box {
+    position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #293544;
+}
+
+.welcome-text {
+	flex: 1;
+	color: #52c7fd;
+	font-size: 50px;
+	text-align: center;
+	padding: 20px;
+    margin-left: 50px;
+}
+
+.welcome-image {
+	flex: 1;
+	text-align: center;
+}
+
+.welcome-image img {
+	width: 300px;
+	height: 400px;
+	display: block;
+	margin: 0 auto;
+    border: 7px solid #1f2833;
+}
+
+/* About me styling */
+.about-me {
+    background-color: #1f2833;
+    color: #66fcf1;
+    font-size: 20px;
+    padding: 20px;
+}
+.about-me h2 {
+    color: #52c7fd;
+}
+/* Contact me styling */
+.contact-me {
+	background-color: #293544;
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.contact-sites {
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 150px;
+}
+.contact-sites img {
+    width: 150px;
+    height: 150px;
+}
+figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+figcaption {
+	margin-top: 10px;
+	font-size: 16px;
+    color: #66fcf1;
+}
+.contact-form {
+    background-color: #11151b;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 150px;
+}
+.contact-form h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #52c7fd;
+}
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #66fcf1;
+}
+.contact-form input, textarea {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #66fcf1;;
+    border-radius: 5px;
+    background-color: #1F2833;
+}
+.contact-form input[type="submit"] {
+    background-color: #52c7fd;
+    color: #1F2833;
+    cursor: pointer;
+}
+.contact-form input[type="submit"]:hover {
+    background-color: #3887ac;
+}
+.contact-form input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 15px #3887ac;
+}
+.contact-form input[type="text"] {
+    color: #66fcf1;
+}
+
+/* Footer styling */
+.footer {
+    color: #66fcf1;
+    background-color: #191b24;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+}
+.footer a {
+    color: #45a29e;
+}
+
+/* Media */
+@media screen and (max-width: 1280px) {
+    .content {
+        width: 100%;
+    }
+    .contact-sites {
+        margin-left: 0;
+    }
+    .contact-form {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+    .welcome-box {
+        flex-direction: column;
+    }
+    .about-me {
+        flex-direction: column;
+    }
+    .contact-me {
+        flex-direction: column;
+    }
+    .contact-sites {
+        flex-direction: column;
+    }
+    .contact-form {
+        align-items: center;
+        justify-content: center;
+    }
+    .date {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 2070px) {
+    .contact-sites {
+        margin-left: 75px;
+    }
+    .contact-form {
+        margin-right: 75px;
+    }
+}
+
+@media screen and (max-width: 1850px) {
+    .contact-sites {
+        margin-left: 10px;
+    }
+    .contact-form {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1680px) {
+    .contact-sites {
+        margin-left: 0px;
+    }
+    .contact-form {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 1601px) {
+    .contact-me {
+        flex-direction: column;
+    }
+    .content {
+        width: 100%;
+    }
+    .menu {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .content {
+        width: fit-content;
+    }
+    .menu {
+        width: fit-content;
+    }
+    .dropdown {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 1601px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: teal;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .menu li:hover {
+        display: inline-block;
+        background-color: #4c9e9e;
+        transition: 0.3s ease;
+    }
+
+    .menu li+li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .dropdown {
+        left: 50%;
+        top: 30px;
+        transform: translateX(35%);
+    }
+
+    .dropdown li:hover {
+        background-color: #4c9e9e;
+    }
+}

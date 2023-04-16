@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Tomi Puumalainen">
+        <meta name="description" content="Tomi Puumalainen's game development portfolio">
+        <meta name="keywords" content="HTML, CSS">
+        <link rel="stylesheet" href="Resources/CSS/style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    <!-- Boxicons CSS -->
+        <script src="Resources/JS/scripts.js" type="text/JavaScript"></script>
+        <title>Portfolio - Tomi Puumalainen</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Tomi Puumalainen<p>Game Programming student</p></div>
+            <p class="date">Date/Time: <span id="datetime"></span></p><script type="text/JavaScript">date();</script>    
+            <ul class="nav-links">     
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>     
+                <div class="menu">       
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="CV.html">CV</a></li>       
+                    <li class="services">
+                        <a href="Projects.html">PROJECTS</a>        
+                        <ul class="dropdown">
+                            <li><a href="Project2.html">3DEscapeAdventure</a></li>
+                            <li><a href="Project1.html">2DPlatformerProto</a></li>
+                        </ul>      
+                    </li>        
+                </div>
+            </ul>
+        </nav>
+        <div class="content" id="content">
+            <div class="welcome-box">
+                <div class="welcome-text">
+                    <h1>Welcome to my portfolio!</h1>
+                </div>
+                <div class="welcome-image">
+                    <img src="Resources/IMG/IMG_3606.jpg" alt="Picture of me">
+                </div>
+            </div>
+            <div class="about-me">
+                <h2>About me</h2>
+                <p>
+                    Hello and thank you for checking my portfolio! My name is Tomi and I'm currently studying game programming at South-Eastern Finland University of Applied Sciences (XAMK).
+                    Video games and gaming have always interested me ever since I was a child. As I keep getting older, they have continuously helped me to learn new things, encouraged me to take difficult challenges head on without worry and introduced me to new people from all over the world, many whom have become my bestest friends.
+                    Because of all these wonderful things video games have given me and helped me do, I want to do my part and give something back and in so, help the next generation to enjoy life.
+                </p>
+                <p>
+                    My current focus on my studies has been the basic principels of game development.
+                    Like how to make games on different game engines, such as Unity and Unreal, and how to program different functions in them using C++ and C#.
+                    And also how to make your own custom assets for games using programs like 3dsMax, Blender and Krita to model objects and create textures for them.
+                    Even though my journey has just started, I feel like I have learned a lot and continue to do so.
+                </p>
+                <p>
+                    As my journey continues and my skills grow, so does my expectations and goals.
+                    I want to take on new and exciting challenges, and keep hitting my head to the wall until it breaks down.
+                    With this mindset, I want to go and be part of these creative projects and help games to push on to new heights.
+                </p>
+            </div>
+            <div class="contact-me">
+                <div class="contact-form">
+                    <h2>Contact me!</h2>    <!-- TEST REQUIRED WHEN DONE -->
+                    <form action="https://formsubmit.co/tomipuumalainen@hotmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Yhteydenottopyyntö portfoliosta">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="contact-sites">
+                    <a href="https://github.com/Yinlizz">
+                        <figure>
+                            <img src="Resources/IMG/github-mark-white.png" alt="Github">
+                            <figcaption>Github</figcaption>
+                        </figure>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tomipuumalainen/">
+                        <figure>
+                            <img src="Resources/IMG/In-White-128@2x.png" alt="LinkedIn">
+                            <figcaption>LinkedIn</figcaption>
+                        </figure>
+                    </a>
+                    <div class="contact-location">
+                        <figure>
+                            <img src="Resources/IMG/location.png" alt="Location">
+                            <figcaption>Finland</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="footer">
+            <div class="footer-text">
+                <p>Site designed by Tomi Puumalainen. Map icon made by <a href="https://www.flaticon.com/authors/rakib-hassan-rahim" title="Rakib Hassan Rahim"> Rakib Hassan Rahim </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+            </div>
+        </div>      
+    </body>
+</html>
+<!-- Author: Tomi Puumalainen 22.03.2023 -->

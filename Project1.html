@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Tomi Puumalainen">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <link rel="stylesheet" href="Resources/CSS/style.css">
+        <link rel="stylesheet" href="Resources/CSS/project.css">
+        <script src="Resources/JS/scripts.js" type="text/JavaScript"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    <!-- Boxicons CSS -->
+        <title>Portfolio - Tomi Puumalainen</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Tomi Puumalainen<p>Game Programming student</p></div>
+            <p class="date">Date/Time: <span id="datetime"></span></p><script type="text/JavaScript">date();</script>     
+            <ul class="nav-links">     
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>     
+                <div class="menu">       
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="CV.html">CV</a></li>       
+                    <li class="services">
+                        <a href="Projects.html">PROJECTS</a>        
+                        <ul class="dropdown">
+                            <li><a href="Project2.html">3DEscapeAdventure</a></li>
+                            <li><a href="Project1.html">2DPlatformerProto</a></li>
+                        </ul>      
+                    </li>        
+                </div>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="project-1stuff">
+                <h2><u>2DPlatformerProto</u></h2>
+                <div class="project-block1">
+                    <div class="block1-text">
+                        <h3>Intro</h3>
+                        <p>
+                            During the course, we were tasked to create a game prototype of our choosing in Unity as a solo project.
+                            I choose to make a side scrolling platformer game inspired by the old school classics like Super Mario, Sonic and Mega Man.
+                            As the project was a course assignment, it is not available for public.
+                        </p>
+                        <p>
+                            Game consists of one level that requires the player to reach the goal to win the game.
+                            Player has three hitpoints indicated by the healthbar on the upper-left corner.
+                            Level consists of platforms, obstacles and patrolling enemies. Player can't harm them, they will only take damage from them.
+                            To help the player reach the goal, they can find health pickups to restore health and one checkpoint incase of player death.
+                        </p>
+                    </div>
+                    <div class="block1-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/5HxfupxfyvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen alt="Video not available"></iframe>
+                    </div>
+                </div>
+                <div class="project-block2">
+                    <div class="block2-text">
+                        <h3>Workphase</h3>
+                        <p>
+                            I was the sole developer on this project and I'm responsible for the gameplay.
+                            All the visual and audio assets are from Unity asset store and not made by me.
+                            Point of the assignment was not to make a proper and finished game, but to make something playable.
+                        </p>
+                        <p>
+                            Most of the time was used to research Unity usage and programming for it.
+                            Thankfully Unity has a big community that has created a lot of tutorials and documentation for different aspects that are clear.
+                        </p>
+                        <p>
+                            For me the most impressive thing in this project is the way the camera acts and moves.
+                            Game draws a gizmo box around the player character and when character touches the box, depending from where, it moves with the player and camera moves too, tracking the gizmo.
+                            As such, it creates the same kind of effect as in old school platformers, where the camera follows the player.
+                            Gizmo is also fully customizable in Unity and you see it visually.
+                            Code for this effect is shown below. ↓
+                        </p>
+                    </div>
+                </div>
+                <div class="project-code">
+                    <h3>Code for camera CameraController</h3>
+                    <pre>
+                        <code>
+                            using System.Collections;
+                            using System.Collections.Generic;
+                            using UnityEngine;
+
+                            public class CameraController : MonoBehaviour
+                            {
+                                public GameObject followObject;
+                                public Vector2 followOffset;
+                                public float speed = 3f;
+                                private Vector2 threshold;
+                                private Rigidbody2D RB;
+
+                                void Start()
+                                {
+                                    threshold = calcThreshold();
+                                    RB = followObject.GetComponent(Rigidbody2D)();
+                                }
+
+                                void FixedUpdate()
+                                {
+                                    Vector2 follow = followObject.transform.position;
+                                    float xDiff = Vector2.Distance(Vector2.right * transform.position.x, Vector2.right * follow.x);
+                                    float yDiff = Vector2.Distance(Vector2.up * transform.position.y, Vector2.up * follow.y);
+
+                                    Vector3 newPosition = transform.position;
+
+                                    if (Mathf.Abs(xDiff) >= threshold.x)
+                                    {
+                                        newPosition.x = follow.x;
+                                    }
+                                    if (Mathf.Abs(yDiff) >= threshold.y)
+                                    {
+                                        newPosition.y = follow.y;
+                                    }
+                                    float moveSpeed = RB.velocity.magnitude > speed ? RB.velocity.magnitude : speed;
+                                    transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
+                                }
+                                
+                                private Vector3 calcThreshold()
+                                {
+                                    Rect aspect = Camera.main.pixelRect;
+                                    Vector2 T = new Vector2(Camera.main.orthographicSize * aspect.width / aspect.height, Camera.main.orthographicSize);
+                                    T.x -= followOffset.x;
+                                    T.y -= followOffset.y;
+                                    return T;
+                                }
+
+                                private void OnDrawGizmos()
+                                {
+                                    Gizmos.color = Color.green;
+                                    Vector2 border = calcThreshold();
+                                    Gizmos.DrawWireCube(transform.position, new Vector3(border.x * 2, border.y * 2, 1));
+                                }
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <div class="project-block2">
+                    <div class="block2-text">
+                        <h3>Summary</h3>
+                        <p>
+                            The project was an excellent introduction to Unity and 2D games.
+                            I learned a lot about using Unity and how to program functions in it for 2D game.
+                            In such a short amount of time, I was able to make a nice prototype of a sidescrolling platforming game and I'm definitely planning to evolve this to an actual game at some point in the future.
+                            In future I want to make my own assets for such a game and add more levels and functionality.
+                            As such, it was an excellent assignment and it already took me so much forward on this journey.
+                            It will help me a lot on future projects concerning Unity and 2D space.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                <p>Site designed by Tomi Puumalainen. Map icon made by <a href="https://www.flaticon.com/authors/rakib-hassan-rahim" title="Rakib Hassan Rahim"> Rakib Hassan Rahim </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+            </div>
+        </div>           
+    </body>
+</html>
+<!-- Author: Tomi Puumalainen 22.03.2023 -->

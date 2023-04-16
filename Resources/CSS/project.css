@@ -1,0 +1,167 @@
+/* Author: Tomi Puumalainen 23.03.2023 */
+.project-overall {
+    background-color: #293544;
+    color: #52c7fd;
+    padding: 20px;
+}
+.project-overall h2 {
+    font-size: 40px;
+    margin: auto;
+}
+.project-overall p {
+    font-size: 20px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.project-1 {
+    background-color: #293544;
+    color: #52c7fd;
+    height: 500px;
+    padding: 20px;
+}
+.project-1 a {
+    color: #52c7fd;
+}
+.project-2 {
+    color: #66fcf1;
+    height: 500px;
+    padding: 20px;
+}
+.project-2 a {
+    color: #66fcf1;
+}
+.project-1image img {
+    width: 650px;
+    height: auto;
+    margin-left: 100px;
+    display: block;
+    border: 7px solid #1f2833;
+}
+.project-2image img {
+    width: 650px;
+    height: auto;
+    margin-left: 100px;
+    display: block;
+    border: 7px solid #293544;
+}
+.project-2content {
+    display: flex;
+    flex-direction: row;
+}
+.project-1content {
+    display: flex;
+    flex-direction: row;
+}
+.project-block1 {
+    display: flex;
+    flex-direction: row;
+    color: #66fcf1;
+    padding: 20px;
+}
+.project-1stuff h2{
+    color: #66fcf1;
+}
+.project-1stuff {
+    background-color: #293544;
+}
+.project-block2 {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
+    margin: -5px;
+}
+.project-code code {
+    background-color: #191b24;
+    color: #66fcf1;
+    border: 5px solid #1f2833;
+    display: block;
+}
+.project-code h3 {
+    padding: 20px;
+    color: #66fcf1;
+}
+.project-1stuff h2 {
+    padding: 20px;
+}
+.block2-text {
+    margin-top: 15px;
+    color: #66fcf1;
+}
+.project-block3 {
+    display: flex;
+    flex-direction: row;
+    color: #66fcf1;
+    padding: 20px;
+}
+.block1-video iframe {
+    border: 7px solid #1f2833;
+}
+.project-2stuff {
+    min-height: 100vh;
+}
+.project-2stuff h2 {
+    padding: 20px;
+    color: #66fcf1;
+}
+
+
+@media screen and (max-width: 1150px) {
+    .project-1content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-2content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-1 {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .project-1image img {
+        margin-left: 0px;
+    }
+    .project-2 {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .project-2image img {
+        margin-left: 0px;
+    }
+    .project-overall {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .project-1stuff h2, h3{
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-block1 {
+        flex-direction: column;
+    }
+    .block1-video iframe {
+        align-items: center;
+        justify-content: center;
+        display: block;
+        margin: 0 auto;
+    }
+    .project-code code {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1028px) {
+    .project-code code {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 748px) {
+    .project-code code {
+        font-size: 7px;
+    }
+}
