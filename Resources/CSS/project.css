@@ -213,4 +213,7 @@
     .project-code code {
         font-size: 5px;
     }
+    .logo p {
+        padding: 0;
+    }
 }
