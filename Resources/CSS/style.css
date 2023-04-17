@@ -12,6 +12,7 @@ body {
     padding: 0;
     width: 100%;
     background: #1f2833;
+    overflow-x: hidden;
 }
 
 /* Nav menu styling */
@@ -211,6 +212,7 @@ figcaption {
     background-color: #52c7fd;
     color: #1F2833;
     cursor: pointer;
+    width: 400px;
 }
 .contact-form input[type="submit"]:hover {
     background-color: #3887ac;
@@ -235,6 +237,11 @@ figcaption {
 }
 .footer a {
     color: #45a29e;
+}
+
+/* CV Styling */
+.cv-pdf {
+    height: 1200px;
 }
 
 /* Media */
@@ -315,15 +322,37 @@ figcaption {
     }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 768px) {
     .content {
-        width: fit-content;
+        width: 100%;
+        height: 100%;
     }
     .menu {
         width: fit-content;
     }
     .dropdown {
         width: fit-content;
+    }
+    .welcome-text {
+        font-size: 25px;
+        margin: 0 auto;
+    }
+    .contact-form {
+        width: 300px;
+        height: 100%;
+    }
+    .contact-form input, textarea {
+        width: 275px;
+    }
+    .footer {
+        height: auto;
+        width: auto;
+    }
+    .contact-form input[type="submit"] {
+        width: 300px;
+    }
+    .cv-pdf {
+        height: 600px;
     }
 }
 
