@@ -207,12 +207,18 @@ figcaption {
     border: 2px solid #66fcf1;;
     border-radius: 5px;
     background-color: #1F2833;
+    color: #66fcf1;
 }
 .contact-form input[type="submit"] {
     background-color: #52c7fd;
     color: #1F2833;
     cursor: pointer;
     width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #11151b;
+    font-size: 25px;
+    display: block;
 }
 .contact-form input[type="submit"]:hover {
     background-color: #3887ac;
@@ -220,9 +226,6 @@ figcaption {
 .contact-form input:focus, textarea:focus {
     outline: none;
     box-shadow: 0 0 15px #3887ac;
-}
-.contact-form input[type="text"] {
-    color: #66fcf1;
 }
 
 /* Footer styling */
