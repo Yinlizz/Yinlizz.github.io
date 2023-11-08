@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Tomi Puumalainen">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <link rel="stylesheet" href="Resources/CSS/style.css">
+        <link rel="stylesheet" href="Resources/CSS/project.css">
+        <script src="Resources/JS/scripts.js" type="text/JavaScript"></script>
+        <title>Portfolio - Tomi Puumalainen</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Tomi Puumalainen<p>Game Programming student</p></div>
+            <p class="date">Date/Time: <span id="datetime"></span></p><script type="text/JavaScript">date();</script>     
+            <ul class="nav-links">     
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>     
+                <div class="menu">       
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="CV.html">CV</a></li>       
+                    <li class="services">
+                        <a href="Projects.html">PROJECTS</a>        
+                        <ul class="dropdown">
+                            <li><a href="Project3.html">Reverse-Bullethell</a></li>
+                            <li><a href="Project2.html">3DEscapeAdventure</a></li>
+                            <li><a href="Project1.html">2DPlatformerProto</a></li>
+                        </ul>      
+                    </li>        
+                </div>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="project-1stuff">
+                <h2><u>Reverse-Bullethell</u></h2>
+                <div class="project-block1">
+                    <div class="block1-text">
+                        <h3>General idea</h3>
+                        <p>
+                            Goal of this project is to make a reverse-bullethell type of game and to learn Godot game engine.
+                            Game will be 2D and it will have pixelart graphics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-text">
+                <p>Site designed by Tomi Puumalainen. Map icon made by <a href="https://www.flaticon.com/authors/rakib-hassan-rahim" title="Rakib Hassan Rahim"> Rakib Hassan Rahim </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+            </div>
+        </div>           
+    </body>
+</html>
